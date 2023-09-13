@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'EventManagement.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://achyuth:gcNskTUQBcblXK2iIqhmw9DsbH429YKU@dpg-ck0o0eu3ktkc738kv3m0-a/eventdb_0970')
+    'default': dj_database_url.config(default='postgres://eventdb_uqsv_user:qKzfmS7Q4o1IEkHu6EyfnjnkYhDcsJUf@dpg-ck0op8j6fquc738ulckg-a/eventdb_uqsv')
 }
 
 # Password validation
