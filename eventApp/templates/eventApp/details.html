@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img id ="logo" src = "{% static 'logo.png'%}"/>
+        <nav>
+        <a class = "nav-link" href = "{% url 'index' %}">HOME</a>
+        <a class = "nav-link" href = "">LOGIN</a>
+        <a class = "nav-link" href = "">REGISTRATION
+        <a class = "nav-link" href = "">ABOUT US</a>
+        </a>
+        </nav>
+    </header>
+    <section id = "event-details">
+        <div class ="appln-form">
+            <h2 style = "color:rgb(0, 0, 121);" class = "heading"> {{event.event_title}}</h2>
+            <p class = "event-location" style="font-size: x-large; font-weight: 300;">{{event.location}}</p>
+            <p class = "event-date" style="font-size: x-large; font-weight: 300;"> {{event.date}}</p>
+            <p class = "event-description" style = "font-family: Poppins; font-size: large; font-weight: 300;">{{event.description}}</p>
+            <form action="{% url 'eventdetail' event.pk %}" method = 'POST'>
+                <h3 style = "color:rgb(0, 0, 121);">Register for the event</h3>
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy;2023 Event Registration System</p>
+    </footer>
+</body>
+</html>
+</html>
